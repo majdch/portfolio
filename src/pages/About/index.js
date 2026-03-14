@@ -32,7 +32,7 @@ const About = () => {
                             <span className="icon">📍</span> Casablanca, Morocco
                         </div>
                         <div className="info-item">
-                            <span className="icon">🇬🇧</span> English · <span className="icon">🇫🇷</span> French · <span className="icon">🇸🇦</span> Arabic
+                            <span className="icon">🇬🇧</span> English · <span className="icon">🇫🇷</span> French · <span className="icon">🇲🇦</span> Arabic
                         </div>
                     </div>
 
