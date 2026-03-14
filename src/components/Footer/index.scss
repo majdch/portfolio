@@ -1,0 +1,48 @@
+@import "../../styles/absctract/mixins";
+
+.footer {
+  background: var(--navy);
+  color: var(--white);
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+  width: 100%;
+
+  .footer-container {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include respond(phone) {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+    }
+  }
+
+  .footer-left {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+
+  .footer-right {
+    a {
+      color: var(--white);
+      opacity: 0.9;
+      transition: opacity 0.2s;
+      display: inline-block;
+
+      svg {
+        display: block;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

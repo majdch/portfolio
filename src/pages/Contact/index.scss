@@ -1,0 +1,135 @@
+@import "../../styles/absctract/mixins";
+
+.contact-container {
+  display: flex;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+}
+
+.contact-info {
+  flex: 1;
+
+  .info-box {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      color: var(--dark);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .icon {
+        font-size: 20px;
+        width: 30px;
+        text-align: center;
+      }
+
+      a {
+        color: var(--blue);
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+          color: var(--navy);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .status-note {
+    background: var(--light-blue);
+    border-left: 4px solid var(--navy);
+    padding: 20px;
+    border-radius: 4px;
+    color: var(--navy);
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+}
+
+.contact-form-wrapper {
+  flex: 1.2;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .form-group {
+      width: 100%;
+
+      input, textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 14px;
+        color: var(--dark);
+        background: var(--light);
+        transition: border-color 0.2s, box-shadow 0.2s;
+
+        &:focus {
+          outline: none;
+          border-color: var(--blue);
+          box-shadow: 0 0 0 3px rgba(46, 117, 182, 0.1);
+          background: var(--white);
+        }
+
+        &::placeholder {
+          color: var(--mid);
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+    }
+
+    .submit-btn {
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      padding: 14px 24px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      align-self: flex-start;
+
+      &:hover {
+        background: var(--blue);
+        color: var(--white);
+      }
+
+      &:active {
+        transform: translateY(1px);
+      }
+    }
+  }
+}

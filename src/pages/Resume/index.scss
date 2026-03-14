@@ -1,0 +1,153 @@
+@import "../../styles/absctract/mixins";
+
+#resume {
+  max-width: 860px;
+  margin: 0 auto;
+
+  .resume-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+
+    .resume-download-wrapper {
+      .download-cv .download-btn {
+        background: var(--navy);
+        color: var(--white);
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        
+        &:hover {
+          background: var(--blue);
+        }
+      }
+    }
+  }
+
+  .resume-timeline {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 50px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+  }
+
+  .skills-section {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .skill-group {
+      h4 {
+        font-size: 15px;
+        color: var(--navy);
+        margin: 0 0 12px 0;
+        font-weight: 700;
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        span {
+          background: var(--light-blue);
+          color: var(--blue);
+          padding: 6px 14px;
+          border-radius: 20px;
+          font-size: 13px;
+          font-weight: 500;
+          transition: background 0.2s, color 0.2s;
+
+          &:hover {
+            background: var(--navy);
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+
+  .certifications-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+
+    @include respond(tab-port) {
+      gap: 15px;
+    }
+
+    .cert-card {
+      display: flex;
+      align-items: center;
+      background: var(--white);
+      border-radius: 8px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--navy);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+
+      @include respond(phone) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        margin-right: 20px;
+
+        @include respond(phone) {
+          margin-right: 0;
+        }
+      }
+
+      .cert-info {
+        flex: 1;
+
+        h4 {
+          font-size: 15px;
+          color: var(--navy);
+          margin: 0 0 10px 0;
+          line-height: 1.4;
+        }
+
+        .cert-badges {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+
+          span {
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+          }
+
+          .code-badge {
+            background: rgba(46, 117, 182, 0.1);
+            color: var(--blue);
+          }
+
+          .valid-badge {
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+          }
+        }
+      }
+    }
+  }
+}
